@@ -7,6 +7,7 @@ public class Drug {
 	private String chemicalName;
 	private String Manufacturer;
 	private String drugtype;
+	private boolean isInWatchlist;
 	private ArrayList<String> conditions;
 	private ArrayList<String> contradictions;
 	
@@ -32,12 +33,13 @@ public class Drug {
 		this.contradictions = contradictions;
 	}
 	
-	public Drug(String name, String chemicalName, String manufacturer, String drugtype) {
+	public Drug(String name, String chemicalName, String manufacturer, String drugtype, boolean watchlist) {
 
 		this.name = name;
 		this.chemicalName = chemicalName;
 		Manufacturer = manufacturer;
 		this.drugtype = drugtype;
+		this.isInWatchlist = watchlist;
 		
 	}
 	//SETTERS AND GETTERS//
@@ -78,6 +80,16 @@ public class Drug {
 	}
 	public void setContradictions(ArrayList<String> contradictions) {
 		this.contradictions = contradictions;
+	}
+
+
+	public boolean isInWatchlist() {
+		return isInWatchlist;
+	}
+
+
+	public void setInWatchlist(boolean isInWatchlist) {
+		this.isInWatchlist = isInWatchlist;
 	}
 	
 		//END OF SETTERS AND GETTERS//

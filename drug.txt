@@ -1,2 +1,2 @@
-Xanax Alprazolam pfizer tranquilizer :Nausea :Anxiety :Panic ?Advil
-Advil Ibuprofen pfizer pain reliever :Pain :Fever :Inflamation ?Queso
+Xanax Alprazolam pfizer tranquilizer true :Nausea :Anxiety :Panic ?Advil
+Advil Ibuprofen pfizer pain reliever false :Pain :Fever :Inflamation ?Queso

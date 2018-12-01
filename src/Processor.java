@@ -41,7 +41,7 @@ public class Processor {
 			ArrayList<String> conditions = new ArrayList<>();
 			ArrayList<String> contradictions = new ArrayList<>();
 
-			temp = new Drug(fields[0], fields[1], fields[2], fields[3]);
+			temp = new Drug(fields[0], fields[1], fields[2], fields[3], Boolean.parseBoolean(fields[4]));
 
 			for(int i = 0; i < fields.length; i++) {                         //SET CONDITIONS 
 				if(fields[i].charAt(0) == ':') {
