@@ -14,10 +14,9 @@ public class Processor {
 	
 	public static void processorInit() throws IOException {
 		readDrugs();    //returns an ArrayList
-		readDoctors();
-		
-		//readPatients();
-		//readPrescriptions();
+		readDoctors();		
+		readPatients();
+		readPrescriptions();
 		
 	}	
 	
@@ -92,34 +91,27 @@ public class Processor {
 		return patients;
 	}
 
-	/*public static ArrayList<Prescriptions> readPrescriptions() throws IOException {             
+	public static ArrayList<Prescriptions> readPrescriptions() throws IOException {             
 
 		String currentLine;	     
-		ArrayList<Account> accounts = new ArrayList<>();
+		ArrayList<Prescriptions> prescriptions = new ArrayList<>();
 		String[] fields;
-		Account temp = null;
-		Scanner in = new Scanner(new BufferedReader(new FileReader(filePath)));	
+		Prescriptions temp = null;
+		Scanner in = new Scanner(new BufferedReader(new FileReader(PRESCRIPTION_FILEPATH)));	
 
 		while (in.hasNext()) {
 
 			currentLine = in.nextLine();	         
 			fields = currentLine.split(" ");  				
 
-
-			if (fields[1].equals("C")) { 
-				temp = new Checking(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));    
-			}
-			if (fields[1].equals("S")) {  					
-				temp = new Savings(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));
-			}
-
-
-			accounts.add(temp);
+			temp = new Prescriptions (fields[0], fields[1]);    
+		
+			prescriptions.add(temp);
 		}  
 		in.close();
 
-		return accounts;
-	}*/
+		return prescriptions;
+	}
 	
 	public static void main(String[] args) throws IOException {
 		processorInit();

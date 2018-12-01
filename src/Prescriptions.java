@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Prescriptions {
 	private String id;
 	private String dateIssued;
-	private String doctor;
+	private Doctors doctor;
 	private ArrayList<Druglines> drugLines;
 	
 	/**
@@ -15,8 +15,14 @@ public class Prescriptions {
 	public Prescriptions(String id, String dateIssued, String doctor, ArrayList<Druglines> drugLines) {
 		this.id = id;
 		this.dateIssued = dateIssued;
-		this.doctor = doctor;
+		//this.doctor = doctor;
 		this.drugLines = drugLines;
+	}
+	
+	public Prescriptions(String id, String dateIssued) {
+		this.id = id;
+		this.dateIssued = dateIssued;
+		
 	}
 
 	/**
