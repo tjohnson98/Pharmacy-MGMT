@@ -56,14 +56,14 @@ public class Prescriptions {
 	/**
 	 * @return the doctor
 	 */
-	public String getDoctor() {
+	public Doctors getDoctor() {
 		return doctor;
 	}
 
 	/**
 	 * @param doctor the doctor to set
 	 */
-	public void setDoctor(String doctor) {
+	public void setDoctor(Doctors doctor) {
 		this.doctor = doctor;
 	}
 
