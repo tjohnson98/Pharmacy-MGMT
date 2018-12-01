@@ -5,7 +5,7 @@ public class Doctors {
 	private String address;
 	private String phone;
 	private String specialization;
-	private String[][] watchlist;
+	private String[][] watchlist = new String[10][1];
 	
 	public Doctors() {
 		this.name = "";

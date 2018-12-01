@@ -82,8 +82,6 @@ public class Processor {
 			temp = new Doctors(fields[0] + " " + fields[1], fields[2] + " " + fields[3] + " " + fields[4],
 					fields[5], fields[6]);   
 			
-			//TODO the rest info
-			
 			doctors.add(temp);
 		}  
 		in.close();
@@ -149,7 +147,7 @@ public class Processor {
 			System.out.println(drugs.get(i).getConditions().get(0));
 			System.out.println(drugs.get(i).getContradictions().get(0));
 		}
-		System.out.println(drugs.get(1).getContradictions().get(0));
+		
 		
 /*		for(int i = 0; i < patients.size(); i++ ) {
 			System.out.println(patients.get(i).getName());
