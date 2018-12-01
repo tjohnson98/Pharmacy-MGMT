@@ -1,54 +1,50 @@
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Processor {
 	
-	final static String drugFilePath = "drug.txt";
-	final static String doctorFilePath = "doctor.txt" ;
-	final static String patientFilePath = "patient.txt";
-	final static String prescriptionFilePath = "prescription.txt";
+	final static String DRUG_FILEPATH = "drug.txt";
+	final static String DOCTOR_FILEPATH = "doctor.txt" ;
+	final static String PATIENT_FILEPATH = "patient.txt";
+	final static String PRESCRIPTION_FILEPATH = "prescription.txt";
 	
 	
 	public static void processorInit() throws IOException {
-		readDrugs();
-		readDoctors();
-		readPatients();
-		readPrescriptions();
+		ArrayList<Drug> drugs= readDrugs();
+		System.out.println("" + drugs.get(1).getName());
+		//readDoctors();
+		//readPatients();
+		//readPrescriptions();
 		
 	}	
 	
 	public static ArrayList<Drug> readDrugs() throws IOException {             
 
 		String currentLine;	     
-		ArrayList<Account> accounts = new ArrayList<>();
+		ArrayList<Drug> drugs = new ArrayList<>();
 		String[] fields;
-		Account temp = null;
-		Scanner in = new Scanner(new BufferedReader(new FileReader(filePath)));	
+		Drug temp = null;
+		Scanner in = new Scanner(new BufferedReader(new FileReader(DRUG_FILEPATH)));	
 
 		while (in.hasNext()) {
 
 			currentLine = in.nextLine();	         
 			fields = currentLine.split(" ");  				
 
+			temp = new Drug(fields[0], fields[1], fields[2], fields[3]);
+			//TODO the rest info
 
-			if (fields[1].equals("C")) { 
-				temp = new Checking(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));    
-			}
-			if (fields[1].equals("S")) {  					
-				temp = new Savings(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));
-			}
-
-
-			accounts.add(temp);
+			drugs.add(temp);
 		}  
 		in.close();
 
-		return accounts;
+		return drugs;
 	}
 
-	public static ArrayList<Doctors> readDoctors() throws IOException {             
+	/*public static ArrayList<Doctors> readDoctors() throws IOException {             
 
 		String currentLine;	     
 		ArrayList<Account> accounts = new ArrayList<>();
@@ -133,7 +129,7 @@ public class Processor {
 		in.close();
 
 		return accounts;
-	}
+	}*/
 	
 	public static void main(String[] args) throws IOException {
 		processorInit();

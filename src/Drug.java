@@ -31,6 +31,15 @@ public class Drug {
 		this.conditions = conditions;
 		this.contradictions = contradictions;
 	}
+	
+	public Drug(String name, String chemicalName, String manufacturer, String drugtype) {
+
+		this.name = name;
+		this.chemicalName = chemicalName;
+		Manufacturer = manufacturer;
+		this.drugtype = drugtype;
+		
+	}
 	//SETTERS AND GETTERS//
 	
 	
