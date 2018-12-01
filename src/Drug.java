@@ -7,8 +7,8 @@ public class Drug {
 	private String chemicalName;
 	private String Manufacturer;
 	private String drugtype;
-	private String[] conditions;
-	private ArrayList<Drug> contradictions;
+	private ArrayList<String> conditions;
+	private ArrayList<String> contradictions;
 	
 	public Drug() {
 
@@ -21,8 +21,8 @@ public class Drug {
 	}
 	
 	
-	public Drug(String name, String chemicalName, String manufacturer, String drugtype, String[] conditions,
-			ArrayList<Drug> contradictions) {
+	public Drug(String name, String chemicalName, String manufacturer, String drugtype, ArrayList<String> conditions,
+			ArrayList<String> contradictions) {
 
 		this.name = name;
 		this.chemicalName = chemicalName;
@@ -67,16 +67,16 @@ public class Drug {
 	public void setDrugtype(String drugtype) {
 		this.drugtype = drugtype;
 	}
-	public String[] getConditions() {
+	public ArrayList<String> getConditions() {
 		return conditions;
 	}
-	public void setConditions(String[] conditions) {
+	public void setConditions(ArrayList<String> conditions) {
 		this.conditions = conditions;
 	}
-	public ArrayList<Drug> getContradictions() {
+	public ArrayList<String> getContradictions() {
 		return contradictions;
 	}
-	public void setContradictions(ArrayList<Drug> contradictions) {
+	public void setContradictions(ArrayList<String> contradictions) {
 		this.contradictions = contradictions;
 	}
 	

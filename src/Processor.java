@@ -9,14 +9,19 @@ public class Processor {
 	final static String DRUG_FILEPATH = "drug.txt";
 	final static String DOCTOR_FILEPATH = "doctors.txt" ;
 	final static String PATIENT_FILEPATH = "patient.txt";
-	final static String PRESCRIPTION_FILEPATH = "prescription.txt";
+	final static String PRESCRIPTION_FILEPATH = "prescription.txt";	
+	
+	static ArrayList<Drug> drugs;
+	static ArrayList<Doctors> doctors;
+	static ArrayList<Patients> patients;
+	static ArrayList<Prescriptions> prescriptions;
 	
 	
 	public static void processorInit() throws IOException {
-		readDrugs();    //returns an ArrayList
-		readDoctors();		
-		readPatients();
-		readPrescriptions();
+		drugs = readDrugs();    
+		doctors = readDoctors();		
+		patients = readPatients();
+		prescriptions = readPrescriptions();
 		
 	}	
 	
@@ -25,16 +30,34 @@ public class Processor {
 		String currentLine;	     
 		ArrayList<Drug> drugs = new ArrayList<>();
 		String[] fields;
+		
 		Drug temp = null;
 		Scanner in = new Scanner(new BufferedReader(new FileReader(DRUG_FILEPATH)));	
 
 		while (in.hasNext()) {
 
 			currentLine = in.nextLine();	         
-			fields = currentLine.split(" ");  				
+			fields = currentLine.split(" "); 
+			ArrayList<String> conditions = new ArrayList<>();
+			ArrayList<String> contradictions = new ArrayList<>();
 
 			temp = new Drug(fields[0], fields[1], fields[2], fields[3]);
-			//TODO the rest info
+			
+			for(int i = 0; i < fields.length; i++) {                         //SET CONDITIONS 
+				if(fields[i].charAt(0) == ':') {
+				 conditions.add(fields[i].substring(1));
+				}
+			temp.setConditions(conditions);	
+			
+			}
+			
+			for(int i = 0; i < fields.length; i++) {                         //SET CONTRADICTIONS 
+				if(fields[i].charAt(0) == '?') {
+				 contradictions.add(fields[i].substring(1));
+				}
+			temp.setContradictions(contradictions);	
+			
+			}
 
 			drugs.add(temp);
 		}  
@@ -104,7 +127,8 @@ public class Processor {
 			currentLine = in.nextLine();	         
 			fields = currentLine.split(" ");  				
 
-			temp = new Prescriptions (fields[0], fields[1]);    
+			temp = new Prescriptions (fields[0], fields[1]); 
+			//TODO everything else
 		
 			prescriptions.add(temp);
 		}  
@@ -116,6 +140,28 @@ public class Processor {
 	public static void main(String[] args) throws IOException {
 		processorInit();
 		System.out.println("I compiled!");
+		
+		
+		
+		//TESTING
+		for(int i = 0; i < drugs.size(); i++ ) {
+			System.out.println(drugs.get(i).getName());
+			System.out.println(drugs.get(i).getConditions().get(0));
+			System.out.println(drugs.get(i).getContradictions().get(0));
+		}
+		System.out.println(drugs.get(1).getContradictions().get(0));
+		
+/*		for(int i = 0; i < patients.size(); i++ ) {
+			System.out.println(patients.get(i).getName());
+		}
+		
+		for(int i = 0; i < doctors.size(); i++ ) {
+			System.out.println(doctors.get(i).getName());
+		}
+		
+		for(int i = 0; i < prescriptions.size(); i++ ) {
+			System.out.println(prescriptions.get(i).getId());
+		}*/
 		
 	}
 
