@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class Processor {
 	
 	final static String DRUG_FILEPATH = "drug.txt";
-	final static String DOCTOR_FILEPATH = "doctor.txt" ;
+	final static String DOCTOR_FILEPATH = "doctors.txt" ;
 	final static String PATIENT_FILEPATH = "patient.txt";
 	final static String PRESCRIPTION_FILEPATH = "prescription.txt";
 	
 	
 	public static void processorInit() throws IOException {
-		ArrayList<Drug> drugs= readDrugs();
-		System.out.println("" + drugs.get(1).getName());
-		//readDoctors();
+		readDrugs();    //returns an ArrayList
+		readDoctors();
+		
 		//readPatients();
 		//readPrescriptions();
 		
@@ -44,36 +44,32 @@ public class Processor {
 		return drugs;
 	}
 
-	/*public static ArrayList<Doctors> readDoctors() throws IOException {             
+	public static ArrayList<Doctors> readDoctors() throws IOException {             
 
 		String currentLine;	     
-		ArrayList<Account> accounts = new ArrayList<>();
+		ArrayList<Doctors> doctors = new ArrayList<>();
 		String[] fields;
-		Account temp = null;
-		Scanner in = new Scanner(new BufferedReader(new FileReader(filePath)));	
+		Doctors temp = null;
+		Scanner in = new Scanner(new BufferedReader(new FileReader(DOCTOR_FILEPATH)));	
 
 		while (in.hasNext()) {
 
 			currentLine = in.nextLine();	         
 			fields = currentLine.split(" ");  				
 
-
-			if (fields[1].equals("C")) { 
-				temp = new Checking(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));    
-			}
-			if (fields[1].equals("S")) {  					
-				temp = new Savings(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));
-			}
-
-
-			accounts.add(temp);
+			temp = new Doctors(fields[0] + " " + fields[1], fields[2] + " " + fields[3] + " " + fields[4],
+					fields[5], fields[6]);   
+			
+			//TODO the rest info
+			
+			doctors.add(temp);
 		}  
 		in.close();
 
-		return accounts;
+		return doctors;
 	}
 
-	public static ArrayList<Patients> readPatients() throws IOException {             
+	/*public static ArrayList<Patients> readPatients() throws IOException {             
 
 		String currentLine;	     
 		ArrayList<Account> accounts = new ArrayList<>();
@@ -133,6 +129,7 @@ public class Processor {
 	
 	public static void main(String[] args) throws IOException {
 		processorInit();
+		System.out.println("I compiled!");
 		
 	}
 

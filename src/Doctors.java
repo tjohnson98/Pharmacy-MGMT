@@ -23,6 +23,13 @@ public class Doctors {
 		this.watchlist =  new String[10][1];
 	}
 	
+	public Doctors(String name, String address, String phone, String specialization) {
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.specialization = specialization;
+	}
+	
 	public String getName() {
 		return name;
 	}
