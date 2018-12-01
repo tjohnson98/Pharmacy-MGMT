@@ -133,6 +133,12 @@ public class Processor {
 				System.out.println("Could not find doctor, please add it to our doctors data base");
 			}
 			
+			temp.setPatient(findPatient(fields[4] + " " + fields[5]));
+
+			if(temp.getPatient() == null) {     									                     //checks if the doctor exists 
+				System.out.println("Could not find patient, please add it to our patients data base");
+			}
+			
 			for(int i = 0; i < fields.length; i++) {                         //SET DRUGLINE 
 				if(fields[i].charAt(0) == ':') {
 					Druglines tempD = new Druglines(findDrug(fields[i].substring(1)), fields[i + 1], Integer.parseInt(fields[i + 2]),
@@ -171,6 +177,18 @@ public class Processor {
 		return null;
 
 	}
+	
+	public static Patients findPatient(String name){ 				//FINDS A PATIENT
+
+		for(int i = 0; i < patients.size(); i++) {
+			if(patients.get(i).getName().equals(name)) {
+				return patients.get(i);
+			}
+		}
+		return null;
+
+	}
+	
 
 	public static void main(String[] args) throws IOException {
 		processorInit();

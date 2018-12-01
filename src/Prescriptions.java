@@ -4,13 +4,13 @@ public class Prescriptions {
 	private String id;
 	private String dateIssued;
 	private Doctors doctor;
+	private Patients patient;
 	private ArrayList<Druglines> drugLines;
 	
 
 	public Prescriptions(String id, String dateIssued, String doctor, ArrayList<Druglines> drugLines) {
 		this.id = id;
 		this.dateIssued = dateIssued;
-		//this.doctor = doctor;
 		this.drugLines = drugLines;
 	}
 	
@@ -66,6 +66,14 @@ public class Prescriptions {
 	 */
 	public void setDrugLines(ArrayList<Druglines> drugLines) {
 		this.drugLines = drugLines;
+	}
+
+	public Patients getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patients patient) {
+		this.patient = patient;
 	}
 	
 	
