@@ -6,12 +6,7 @@ public class Prescriptions {
 	private Doctors doctor;
 	private ArrayList<Druglines> drugLines;
 	
-	/**
-	 * @param id
-	 * @param dateIssued
-	 * @param doctor
-	 * @param drugLines
-	 */
+
 	public Prescriptions(String id, String dateIssued, String doctor, ArrayList<Druglines> drugLines) {
 		this.id = id;
 		this.dateIssued = dateIssued;
@@ -25,30 +20,22 @@ public class Prescriptions {
 		
 	}
 
-	/**
-	 * @return the id
-	 */
+
 	public String getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
+
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the dateIssued
-	 */
+
 	public String getDateIssued() {
 		return dateIssued;
 	}
 
-	/**
-	 * @param dateIssued the dateIssued to set
-	 */
+
 	public void setDateIssued(String dateIssued) {
 		this.dateIssued = dateIssued;
 	}

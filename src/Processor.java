@@ -116,6 +116,7 @@ public class Processor {
 
 		String currentLine;	     
 		ArrayList<Prescriptions> prescriptions = new ArrayList<>();
+		ArrayList<Druglines> drugLines = new ArrayList<>();
 		String[] fields;
 		Prescriptions temp = null;
 		Scanner in = new Scanner(new BufferedReader(new FileReader(PRESCRIPTION_FILEPATH)));	
@@ -128,10 +129,20 @@ public class Processor {
 			temp = new Prescriptions (fields[0], fields[1]); 
 			temp.setDoctor(findDoctor(fields[2] + " " + fields[3]));
 
-			if(temp.getDoctor() == null) {     									                    //checks if the doctor exists 
+			if(temp.getDoctor() == null) {     									                     //checks if the doctor exists 
 				System.out.println("Could not find doctor, please add it to our doctors data base");
 			}
+			
+			for(int i = 0; i < fields.length; i++) {                         //SET DRUGLINE 
+				if(fields[i].charAt(0) == ':') {
+					Druglines tempD = new Druglines(findDrug(fields[i].substring(1)), fields[i + 1], Integer.parseInt(fields[i + 2]),
+							Integer.parseInt(fields[i + 3]));
+					drugLines.add(tempD);
+				}
+				temp.setDrugLines(drugLines);	
 
+			}
+			
 			prescriptions.add(temp);
 		}  
 		in.close();
@@ -144,6 +155,17 @@ public class Processor {
 		for(int i = 0; i < doctors.size(); i++) {
 			if(doctors.get(i).getName().equals(name)) {
 				return doctors.get(i);
+			}
+		}
+		return null;
+
+	}
+	
+	public static Drug findDrug(String name){ 				//FINDS A DRUG 
+
+		for(int i = 0; i < drugs.size(); i++) {
+			if(drugs.get(i).getName().equals(name)) {
+				return drugs.get(i);
 			}
 		}
 		return null;
@@ -164,17 +186,18 @@ public class Processor {
 		}
 
 
-		/*		for(int i = 0; i < patients.size(); i++ ) {
+				for(int i = 0; i < patients.size(); i++ ) {
 			System.out.println(patients.get(i).getName());
 		}
 
 		for(int i = 0; i < doctors.size(); i++ ) {
 			System.out.println(doctors.get(i).getName());
 		}
-        */
+        
 		for(int i = 0; i < prescriptions.size(); i++ ) {
 			System.out.println(prescriptions.get(i).getDoctor().getName());
 		}
+		System.out.println(prescriptions.get(0).getDrugLines().get(0).getDrug().getName()); //testing druglines 
 
 	}
 
