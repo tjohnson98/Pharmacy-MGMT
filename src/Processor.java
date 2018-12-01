@@ -69,36 +69,30 @@ public class Processor {
 		return doctors;
 	}
 
-	/*public static ArrayList<Patients> readPatients() throws IOException {             
+	public static ArrayList<Patients> readPatients() throws IOException {             
 
 		String currentLine;	     
-		ArrayList<Account> accounts = new ArrayList<>();
+		ArrayList<Patients> patients = new ArrayList<>();
 		String[] fields;
-		Account temp = null;
-		Scanner in = new Scanner(new BufferedReader(new FileReader(filePath)));	
+		Patients temp = null;
+		Scanner in = new Scanner(new BufferedReader(new FileReader(PATIENT_FILEPATH)));	
 
 		while (in.hasNext()) {
 
 			currentLine = in.nextLine();	         
 			fields = currentLine.split(" ");  				
 
+			temp = new Patients(fields[0] + " " + fields[1], fields[2], fields[3] + " " + fields[4] + " " + fields[5],
+					fields[6], fields[7]);    
 
-			if (fields[1].equals("C")) { 
-				temp = new Checking(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));    
-			}
-			if (fields[1].equals("S")) {  					
-				temp = new Savings(Integer.parseInt(fields[0]), fields[2] + " " + fields[3], Double.parseDouble(fields[4]));
-			}
-
-
-			accounts.add(temp);
+			patients.add(temp);
 		}  
 		in.close();
 
-		return accounts;
+		return patients;
 	}
 
-	public static ArrayList<Prescriptions> readPrescriptions() throws IOException {             
+	/*public static ArrayList<Prescriptions> readPrescriptions() throws IOException {             
 
 		String currentLine;	     
 		ArrayList<Account> accounts = new ArrayList<>();
