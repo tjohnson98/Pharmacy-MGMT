@@ -135,11 +135,11 @@ public class Processor {
 			
 			temp.setPatient(findPatient(fields[4] + " " + fields[5]));
 
-			if(temp.getPatient() == null) {     									                     //checks if the doctor exists 
+			if(temp.getPatient() == null) {     									                     //checks if the patient exists 
 				System.out.println("Could not find patient, please add it to our patients data base");
 			}
 			
-			for(int i = 0; i < fields.length; i++) {                         //SET DRUGLINE 
+			for(int i = 0; i < fields.length; i++) {                         //SET DRUGLINEs 
 				if(fields[i].charAt(0) == ':') {
 					Druglines tempD = new Druglines(findDrug(fields[i].substring(1)), fields[i + 1], Integer.parseInt(fields[i + 2]),
 							Integer.parseInt(fields[i + 3]));
