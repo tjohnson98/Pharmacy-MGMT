@@ -1,2 +1,4 @@
 Xanax Alprazolam pfizer tranquilizer true :Nausea :Anxiety :Panic ?Advil
-Advil Ibuprofen pfizer pain reliever false :Pain :Fever :Inflamation ?Queso
+Advil Ibuprofen pfizer pain-reliever false :Pain :Fever :Inflamation ?Xanax
+Adderall amphetamine teva stimulant true :ADHD :narcolepsy :cognitive-enhance ?Xanax ?Advil
+

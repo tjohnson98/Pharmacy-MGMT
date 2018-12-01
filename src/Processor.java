@@ -56,7 +56,6 @@ public class Processor {
 					contradictions.add(fields[i].substring(1));
 				}
 				temp.setContradictions(contradictions);	
-
 			}
 
 			drugs.add(temp);
@@ -167,6 +166,7 @@ public class Processor {
 
 	}
 	
+	
 	public static Drug findDrug(String name){ 				//FINDS A DRUG 
 
 		for(int i = 0; i < drugs.size(); i++) {
@@ -189,34 +189,9 @@ public class Processor {
 
 	}
 	
-
 	public static void main(String[] args) throws IOException {
 		processorInit();
 		System.out.println("I compiled!");
 
-
-
-		//TESTING
-		for(int i = 0; i < drugs.size(); i++ ) {
-			System.out.println(drugs.get(i).getName());
-			System.out.println(drugs.get(i).getConditions().get(0));
-			System.out.println(drugs.get(i).getContradictions().get(0));
-		}
-
-
-				for(int i = 0; i < patients.size(); i++ ) {
-			System.out.println(patients.get(i).getName());
-		}
-
-		for(int i = 0; i < doctors.size(); i++ ) {
-			System.out.println(doctors.get(i).getName());
-		}
-        
-		for(int i = 0; i < prescriptions.size(); i++ ) {
-			System.out.println(prescriptions.get(i).getDoctor().getName());
-		}
-		System.out.println(prescriptions.get(0).getDrugLines().get(0).getDrug().getName()); //testing druglines 
-
 	}
-
 }

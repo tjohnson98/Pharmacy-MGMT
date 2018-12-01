@@ -61,6 +61,4 @@ public class Doctors {
 		this.watchlist = watchlist;
 	} 
 	
-	
-
 }
