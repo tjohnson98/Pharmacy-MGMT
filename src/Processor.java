@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Processor {
 	
-	final String drugFilePath = "drug.txt";
-	final String doctorFilePath = "doctor.txt" ;
-	final String patientFilePath = "patient.txt";
-	final String prescriptionFilePath = "prescription.txt";
+	final static String drugFilePath = "drug.txt";
+	final static String doctorFilePath = "doctor.txt" ;
+	final static String patientFilePath = "patient.txt";
+	final static String prescriptionFilePath = "prescription.txt";
 	
 	
 	public static void processorInit() throws IOException {
