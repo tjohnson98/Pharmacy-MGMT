@@ -135,10 +135,6 @@ public class Processor {
 		return accounts;
 	}
 	
-	
-	
-	
-	
 	public static void main(String[] args) throws IOException {
 		processorInit();
 		
