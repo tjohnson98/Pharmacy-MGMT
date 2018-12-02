@@ -1,2 +1,10 @@
-Sandro Giannini 3352 Gusipan av 2339876655 Psychiatrist 
-Parker Smith 423 commet cl 3345553322 Neurologist
+Sandro Giannini 3352 Gusipan Ave 2339876655 Psychiatrist 
+Parker Smith 423 Commet Cl 3345553322 Neurologist
+Tristin Johnson 1102 Washington Ave 4079983476 Psychiatrist
+Ben Price 354 Magnolia Ln 5014437897 Physician
+Ally Beans 566 Holt Ave 4078898789 Counselor
+Samantha Bucks 650 Greek St 3214887612 Psychiatrist
+Madi Mack 909 Princeton Rd 4079980389 Physician
+Logan Bru 213 Alfond St 6099908797 Therapist
+Thomas Ackens 450 Ruth St 4478981212 Neurologist
+Brittaney James 699 Funk Ln 3214555609
