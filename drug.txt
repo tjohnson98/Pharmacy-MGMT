@@ -1,9 +1,9 @@
-Xanax Alprazolam Pfizer Depressent true :Nausea :Anxiety :Panic ?Advil ?Vicodin
-Advil Ibuprofen Pfizer Pain-reliever false :Pain :Fever :Inflamation ?Xanax ?Vicodin
-Adderall Amphetamine Teva Stimulant true :ADHD :Narcolepsy :Cognitive-enhance ?Xanax ?Advil ?Vicodin
-Sudafed Pseudophedrine Johnson&Johnson Decongestant false :Fever :Flu ?Xanax ?Vicodin
-Vicodin Hydrocodone Caraco Pain-killer true :Pain ?Xanax ?Advil ?Sudafed ?Adderall ?Chlorpromazine
-Claritin Loratadine Cadila Allergies false :Allergies :Sleepiness ?Vicodin ?Xanax ?Sudafed ?Advil
-OxyContin Oxycodone Purdue Pain-killer true :Pain ?Vicodin ?Xanax ?Advil ?Adderall ?Chlorpromazine
-Chlorpromazine Thorazine Antipsychotic true :Bipolar :Schizophrenia ?Xanax ?Vicodin ?OxyContin ?Adderall
-Ibuprofen NSAID Perrigo Pain-reliever false :Pain :Fever :Inflamation ?Xanax ?Vicodin ?Oxycontin ?Chlorpromazine
+Xanax Alprazolam Pfizer Depressent true :Nausea :Anxiety :Panic ?Advil ?Vicodin #Sodium Benzoate #Silicon Dioxide
+Advil Ibuprofen Pfizer Pain-reliever false :Pain :Fever :Inflamation ?Xanax ?Vicodin #Potassium Salt
+Adderall Amphetamine Teva Stimulant true :ADHD :Narcolepsy :Cognitive-enhance ?Xanax ?Advil ?Vicodin #Amphetamine Aspartate
+Sudafed Pseudophedrine Johnson&Johnson Decongestant false :Fever :Flu ?Xanax ?Vicodin #Magnesium Stearate
+Vicodin Hydrocodone Caraco Pain-killer true :Pain ?Xanax ?Advil ?Sudafed ?Adderall ?Chlorpromazine #Microcrystalline Cellulose
+Claritin Loratadine Cadila Allergies false :Allergies :Sleepiness ?Vicodin ?Xanax ?Sudafed ?Advil #Pseudoephedrine
+OxyContin Oxycodone Purdue Pain-killer true :Pain ?Vicodin ?Xanax ?Advil ?Adderall ?Chlorpromazine #BHT #Titanium Dioxide
+Chlorpromazine Thorazine Antipsychotic true :Bipolar :Schizophrenia ?Xanax ?Vicodin ?OxyContin ?Adderall #Sodium Benzoate
+Ibuprofen NSAID Perrigo Pain-reliever false :Pain :Fever ?Xanax ?Vicodin ?Oxycontin ?Chlorpromazine #Croscarmellose Sodium
